@@ -1,41 +1,30 @@
 import styled from "styled-components";
 
 export const Form = styled.form`
-  padding: 1.6rem 0;
+  padding: 16px 0;
 `;
 
 export const Input = styled.input`
   border: 1px solid #ccc;
-  border-radius: 0.3rem;
-  margin-bottom: 0.8rem;
-  padding: 0.8rem 0.4rem;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  padding: 8px 4px;
   display: block;
-  width: 80%;
-  margin: 0 auto;
-  &[disabled] {
-    opacity: 0.3;
-  }
+  width: 100%;
 `;
 
 export const Button = styled.button`
-  background: rgb(250, 145, 10);
-  border-radius: 0.3rem;
+  background: #8d00ff;
+  border-radius: 3px;
   color: #fff;
-  height: 3.2rem;
+  height: 32px;
   display: block;
   width: 100%;
   text-align: center;
-  &[disabled] {
-    opacity: 0.3;
-  }
-`;
-export const Title = styled.h2`
-  font-size: 1.6rem;
-  font-weight: 50rem;
-  padding: 8px 0;
 `;
 
-export const Error = styled.span`
-  font-size: 1.4rem;
-  color: red;
+export const Title = styled.h2`
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 0;
 `;

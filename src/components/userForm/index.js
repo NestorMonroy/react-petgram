@@ -1,26 +1,19 @@
-import React from "react";
-import { useImputValue } from "../../hooks/useInputValue";
-import { Error, Form, Input, Title } from "./stlyes";
+import React, { Fragment } from "react";
+import { useInputValue } from "../../hooks/useInputValue";
+import { Form, Input, Button, Title } from "./stlyes";
 
-export const UserForm = ({ error, disabled, onSubmit, title }) => {
-  const email = useImputValue("");
-  const password = useImputValue("");
-
+export const UserForm = ({ onSubmit, title }) => {
+  const email = useInputValue("");
+  const password = useInputValue("");
 
   return (
-    <>
-      <Form disabled={disabled} >
-        <Title> {title} </Title>
-        <Input disabled={disabled} placeholder='Email' {...email} />
-        <Input
-          disabled={disabled}
-          placeholder='Contraseña'
-          type='password'
-          {...password}
-        />
-        <button disabled={disabled}> {title}aca </button>
+    <Fragment>
+      <Title>{title}</Title>
+      <Form onSubmit={onSubmit}>
+        <Input placeholder='Email' {...email} />
+        <Input placeholder='Password' type='password' {...password} />
+        <Button>{title}</Button>
       </Form>
-      {error && <Error>{error}</Error>}
-    </>
+    </Fragment>
   );
 };
