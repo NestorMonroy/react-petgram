@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useRef, useState } from "react";
 import { Article, ImgWrapper, Img, Button } from "./styles";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
 const DEFAULT_IMAGE =
@@ -8,6 +9,16 @@ const DEFAULT_IMAGE =
 export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
   const element = useRef(null);
   const [show, setShow] = useState(false);
+  const key = `like-${id}`;
+
+  const [liked, setLiked] = useState(() => {
+    try {
+      const like = window.localStorage.getItem(key);
+      return like;
+    } catch (e) {
+      return false;
+    }
+  });
 
   useEffect(
     function () {
@@ -29,6 +40,17 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
     [element]
   );
 
+  const Icon = liked ? FavoriteIcon : FavoriteBorderIcon;
+
+  const setLocalStorage = (value) => {
+    try {
+      window.localStorage.setItem(key, value);
+      setLiked(value);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <Article ref={element}>
       {show && (
@@ -39,8 +61,8 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
             </ImgWrapper>
           </a>
 
-          <Button>
-            <FavoriteBorderIcon size='32px' /> {likes} likes!
+          <Button onClick={() => setLocalStorage(!liked)}>
+            <Icon size='32px' /> {likes} likes!
           </Button>
         </Fragment>
       )}
