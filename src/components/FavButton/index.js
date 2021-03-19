@@ -1,6 +1,6 @@
 import React from "react";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import FavoriteIcon from "@material-ui/icons/Favorite";
 
 import { Button } from "./styles";
 import PropTypes from "prop-types";

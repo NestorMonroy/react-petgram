@@ -5,10 +5,11 @@ export const Link = styled(LinkRouter)`
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
   display: inline-block;
+  margin: 1%;
   overflow: hidden;
-  width: 31.33%;
   position: relative;
-  &::after {
+  width: 31.33%;
+  &:after {
     content: "";
     display: block;
     padding-bottom: 100%;
