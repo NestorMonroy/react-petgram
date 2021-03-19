@@ -21,7 +21,7 @@ function useCategoriesData() {
   return { categories, loading };
 }
 
-export const ListOfCategories = () => {
+const ListOfCategoriesComponent = () => {
   const { categories, loading } = useCategoriesData();
   const [showFixed, setShowFixed] = useState(false);
 
@@ -42,7 +42,7 @@ export const ListOfCategories = () => {
   const renderList = (fixed) => (
     <List fixed={fixed}>
       {loading ? (
-        <Item key='loading'>
+        <Item key="loading">
           <Category />
         </Item>
       ) : (
@@ -62,3 +62,5 @@ export const ListOfCategories = () => {
     </Fragment>
   );
 };
+
+export const ListOfCategories = React.memo(ListOfCategoriesComponent);
