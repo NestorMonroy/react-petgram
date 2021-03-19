@@ -2,12 +2,26 @@ import React from "react";
 import { gql } from "apollo-boost";
 import { Mutation } from "react-apollo";
 
+// gql;
+// Mutation;
+
+// like anonymus
+// const LIKE_PHOTO = gql `
+//     mutation likeAnonymousPhoto($input: LikePhoto!){
+//         likeAnonymousPhoto(input: $input) {
+//             id,
+//             likes,
+//             liked
+//         }
+//     }
+// `
+
 const LIKE_PHOTO = gql`
-  mutation likeAnonymousPhoto($input: LikePhoto!) {
-    likeAnonymousPhoto(input: $input) {
+  mutation likePhoto($input: LikePhoto!) {
+    likePhoto(input: $input) {
       id
-      liked
       likes
+      liked
     }
   }
 `;
