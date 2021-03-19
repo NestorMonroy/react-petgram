@@ -4,7 +4,6 @@ import { Logo } from "./components/Logo";
 import { Router } from "@reach/router";
 
 import { NavBar } from "./components/NavBar";
-import { PhotoCardWithQuery } from "./container/PhotoCardWithQuery";
 
 import { Home } from "./pages/Home";
 import { Detail } from "./pages/Detail";

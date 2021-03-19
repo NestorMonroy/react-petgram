@@ -10,7 +10,7 @@ function useCategoriesData() {
   useEffect(function () {
     setLoading(true);
     window
-      .fetch("https://petgram-server-nestor-nestormonroy.vercel.app/categories")
+      .fetch("https://petgram-nestor-api.vercel.app/categories")
       .then((res) => res.json())
       .then((response) => {
         setCategories(response);
